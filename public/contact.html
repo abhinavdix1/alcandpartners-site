@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact – ALC & PARTNERS</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo"><h1>ALC &amp; PARTNERS</h1></div>
+      <nav>
+        <a href="/">Home</a><a href="/about.html">About</a>
+        <a href="/services.html">Services</a><a href="/resources.html">Resources</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section>
+      <h2>Get Your Quote</h2>
+      <p>Submit details for an enrolled advocate review. You’ll get an email with scope, fees, and next steps. No court work included.</p>
+      <form id="contact-form" method="POST" action="/api/contact">
+        <div><label for="name">Full Name *</label><input id="name" name="name" type="text" required></div>
+        <div><label for="email">Email *</label><input id="email" name="email" type="email" required></div>
+        <div><label for="service">Service *</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select</option>
+            <option>Pre‑Litigation Services</option>
+            <option>Drafting & Documentation</option>
+            <option>Legal Research</option>
+            <option>Advisory Opinions</option>
+          </select>
+        </div>
+        <div><label for="details">Details (optional)</label><textarea id="details" name="details" rows="4"></textarea></div>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="response-message"></div>
+      <script>
+        const form=document.getElementById('contact-form'),
+              r=document.getElementById('response-message');
+        form.addEventListener('submit', async e=> {
+          e.preventDefault();
+          r.textContent='Sending…';
+          const fd=new FormData(form);
+          try {
+            const res=await fetch(form.action,{method:'POST',body:fd});
+            const j=await res.json();
+            r.textContent=j.success?'Thanks—check your email!':'Error: '+(j.error||'Try later');
+            if(j.success) form.reset();
+          } catch {
+            r.textContent='Error sending—please try later';
+          }
+        });
+      </script>
+      <p>Or email: <a href="mailto:contact@alcandpartners.com">contact@alcandpartners.com</a></p>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 ALC &amp; PARTNERS.</p>
+      <p>Services by enrolled advocates; no formal lawyer‑client relationship until engagement.</p>
+    </div>
+  </footer>
+</body>
+</html>
