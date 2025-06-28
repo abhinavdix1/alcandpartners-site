@@ -1,4 +1,5 @@
-aexport async function onRequestPost(context) {
+export async function onRequestPost(context) {
+  
   try {
     const fd = await context.request.formData();
     const n=fd.get('name')?.trim(), e=fd.get('email')?.trim(), s=fd.get('service')?.trim();
