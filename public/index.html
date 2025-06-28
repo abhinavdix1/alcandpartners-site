@@ -1,43 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ALC & PARTNERS</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container header-flex">
-      <div class="logo"><h1>ALC &amp; PARTNERS</h1></div>
+  <header class="site-header">
+    <div class="container">
+      <h1>ALC & PARTNERS</h1>
       <nav>
-        <a href="/">Home</a><a href="/about.html">About</a>
-        <a href="/services.html">Services</a><a href="/resources.html">Resources</a>
-        <a href="/contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
-  <main class="container">
-    <section class="hero">
-      <h2>Remote Pre‑Litigation & Legal Services</h2>
-      <p>Unbundled pre‑suit services, drafting, research memos, and advisory reports—100% online.</p>
-      <p><a class="button outline" href="/services.html">Explore Services</a></p>
-    </section>
-    <section class="trust">
-      <h3>Why ALC &amp; PARTNERS?</h3>
-      <ul>
-        <li>Founder & Managing Partner: Abhinav Dixit</li>
-        <li>Senior Partner: Vishwas Srivastava</li>
-        <li>Network of enrolled advocates handling every assignment</li>
-        <li>Transparent fees & secure (HTTPS + TLS) workflow</li>
-        <li>No court representation; clients arrange their own counsel</li>
-      </ul>
-    </section>
-  </main>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Empowering Justice with Digital Precision</h2>
+      <p>Unbundled legal services delivered online. Transparent. Efficient. Professional.</p>
+    </div>
+  </section>
+
+  <section class="services-preview">
+    <div class="container">
+      <div class="card">
+        <h3>Legal Drafting</h3>
+        <p>Custom documents crafted by experts.</p>
+        <button onclick="unlock(this)">Unlock Price</button>
+        <div class="hidden-price">Available upon request</div>
+      </div>
+      <div class="card">
+        <h3>Dispute Resolution</h3>
+        <p>Pre-litigation, negotiation and strategy planning.</p>
+        <button onclick="unlock(this)">Unlock Price</button>
+        <div class="hidden-price">Available upon request</div>
+      </div>
+      <div class="card">
+        <h3>Legal Research</h3>
+        <p>Precise, reliable legal research by professionals.</p>
+        <button onclick="unlock(this)">Unlock Price</button>
+        <div class="hidden-price">Available upon request</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro-image">
+    <img src="https://images.unsplash.com/photo-1606312618560-2c8b2be9aa8f" alt="Legal Books and Technology">
+  </section>
+
   <footer>
     <div class="container">
-      <p>&copy; 2025 ALC &amp; PARTNERS.</p>
-      <p>Informational only; services by enrolled advocates. No formal lawyer‑client relationship until engagement.</p>
+      <p>&copy; 2025 ALC & PARTNERS. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function unlock(btn) {
+      btn.style.display = 'none';
+      btn.nextElementSibling.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
