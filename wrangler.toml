@@ -1,0 +1,10 @@
+name = "alcandpartners-site"
+main = "./functions"
+type = "javascript"
+
+[build]
+command = ""
+[build.upload]
+dir = "public"
+
+compatibility_date = "2025-06-01"
