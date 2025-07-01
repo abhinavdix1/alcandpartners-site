@@ -1,76 +1,104 @@
-<section id="services" class="services container">
-  <h2>Our Services</h2>
-  <p>Select a category to explore sub‑services and unlock pricing:</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services – ALC & PARTNERS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">ALC &amp; PARTNERS</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="services-map">
+  <main class="container">
+    <section id="services">
+      <h2>Our Unbundled Services</h2>
+      <p>Choose exactly the service you need. Click “🔓 Unlock Prices” for transparent fee details.</p>
 
-    <details>
-      <summary>
-        Pre‑Litigation / Pre‑Suit Drafting
-        <button class="unlock" onclick="unlockSection(this)">🔓 Unlock Prices</button>
-      </summary>
-      <ul>
-        <li>Settlement Letters</li>
-        <li>Demand Letters & Legal Notices</li>
-        <li>Response Letters & Notice Replies</li>
-        <li>Responses to Statutory & Regulatory Notices</li>
-        <li>Replies to Government Notices & Letters</li>
-      </ul>
-    </details>
+      <div class="services-grid">
 
-    <details>
-      <summary>
-        Drafting & Dispute Resolution
-        <button class="unlock" onclick="unlockSection(this)">🔓 Unlock Prices</button>
-      </summary>
-      <ul>
-        <li><strong>Transactional:</strong> Contracts, Agreements, Deeds</li>
-        <li><strong>Litigation:</strong> Pleadings, Petitions, Appeals (Civil, MSME, RERA, Consumer, Insurance Ombudsman)</li>
-        <li><strong>Arbitration:</strong> Statement of Claim (SoC), Statement of Defense (SoD)</li>
-        <li><strong>Dispute Resolution:</strong> Mediation & Conciliation</li>
-      </ul>
-    </details>
+        <div class="service-card">
+          <h3>Pre‑Litigation / Pre‑Suit Drafting</h3>
+          <ul>
+            <li>Settlement Letters</li>
+            <li>Demand Letters & Legal Notices</li>
+            <li>Response Letters & Notice Replies</li>
+            <li>Responses to Statutory & Regulatory Notices</li>
+            <li>Replies to Government Notices & Letters</li>
+          </ul>
+          <button class="unlock" onclick="showPricing()">🔓 Unlock Prices</button>
+        </div>
 
-    <details>
-      <summary>
-        Legal Research
-        <button class="unlock" onclick="unlockSection(this)">🔓 Unlock Prices</button>
-      </summary>
-      <p>Custom research memos on statutes, case law, regulations—ideal for students and professionals.</p>
-    </details>
+        <div class="service-card">
+          <h3>Drafting & Dispute Resolution</h3>
+          <ul>
+            <li><strong>Transactional:</strong> Contracts, Agreements, Deeds</li>
+            <li><strong>Litigation:</strong> Pleadings, Petitions, Appeals (Civil, MSME, RERA, Consumer, Insurance)</li>
+            <li><strong>Arbitration:</strong> Statement of Claim & Statement of Defense</li>
+            <li><strong>Dispute Resolution:</strong> Mediation & Conciliation</li>
+          </ul>
+          <button class="unlock" onclick="showPricing()">🔓 Unlock Prices</button>
+        </div>
 
-    <details>
-      <summary>
-        Advisory & Opinions
-        <button class="unlock" onclick="unlockSection(this)">🔓 Unlock Prices</button>
-      </summary>
-      <ul>
-        <li>Rights & Obligations Analysis</li>
-        <li>Contract Dispute Guidance</li>
-        <li>Property, Family & Criminal Law Advice</li>
-        <li>Consumer & Insurance Dispute Strategy</li>
-        <li>Legal Opinions on Validity, Enforceability & Compliance</li>
-      </ul>
-    </details>
+        <div class="service-card">
+          <h3>Legal Research</h3>
+          <p>Custom research memos on statutes, case law, and regulatory frameworks—ideal for students & professionals.</p>
+          <button class="unlock" onclick="showPricing()">🔓 Unlock Prices</button>
+        </div>
 
-  </div>
+        <div class="service-card">
+          <h3>Legal Advice</h3>
+          <ul>
+            <li>Rights & Obligations Analysis</li>
+            <li>Contract Dispute Strategy</li>
+            <li>Property, Family & Criminal Law Guidance</li>
+            <li>Consumer & Insurance Dispute Support</li>
+          </ul>
+          <button class="unlock" onclick="showPricing()">🔓 Unlock Prices</button>
+        </div>
 
-  <!-- Hidden pricing panel -->
-  <div id="pricing-panel" class="pricing-panel">
-    <div class="pricing-content">
+        <div class="service-card">
+          <h3>Legal Opinions</h3>
+          <p>In‑depth opinions on how law applies to your facts, covering validity, enforceability, and compliance.</p>
+          <button class="unlock" onclick="showPricing()">🔓 Unlock Prices</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Pricing Modal -->
+  <div id="pricing-modal" class="pricing-modal">
+    <div class="pricing-box">
       <h3>Pricing Details</h3>
-      <p>Our fees are tailored to each engagement based on complexity and urgency. Please contact us for a precise quote.</p>
+      <p>All fees are quoted based on service complexity and turnaround time. Please <a href="contact.html">contact us</a> for a precise estimate.</p>
       <button class="btn" onclick="closePricing()">Close</button>
     </div>
   </div>
-</section>
 
-<script>
-function unlockSection(btn) {
-  document.getElementById('pricing-panel').style.display = 'flex';
-  btn.blur();
-}
-function closePricing() {
-  document.getElementById('pricing-panel').style.display = 'none';
-}
-</script>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 ALC &amp; PARTNERS. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function showPricing() {
+      document.getElementById('pricing-modal').style.display = 'flex';
+    }
+    function closePricing() {
+      document.getElementById('pricing-modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
