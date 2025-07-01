@@ -1,18 +1,21 @@
+<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ALC & PARTNERS</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>ALC & PARTNERS</h1>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container header-flex">
+      <div class="logo">ALC &amp; PARTNERS</div>
       <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="resources.html">Resources</a>
@@ -21,51 +24,86 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <div class="container">
-      <h2>Empowering Justice with Digital Precision</h2>
-      <p>Unbundled legal services delivered online. Transparent. Efficient. Professional.</p>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Empowering Your Legal Journey—Remotely & Securely</h1>
+        <p>ALC &amp; PARTNERS delivers on‑demand, unbundled legal services—from pre‑litigation strategy to drafting, research, and advisory—through a fully secure online workflow.</p>
+        <a href="services.html" class="btn">Explore Services</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80" alt="Legal consultation online">
+      </div>
     </div>
   </section>
 
-  <section class="services-preview">
-    <div class="container">
+  <!-- About Preview -->
+  <section class="about-preview container">
+    <h2>About Us</h2>
+    <p>We combine over 30 years of in‑house and courtroom experience to offer lightweight, targeted legal support—no bulky retainers or hidden fees. Engage only what you need, when you need it.</p>
+    <a href="about.html" class="btn outline">Learn More</a>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="services-preview container">
+    <h2>Core Services</h2>
+    <div class="card-grid">
       <div class="card">
-        <h3>Legal Drafting</h3>
-        <p>Custom documents crafted by experts.</p>
-        <button onclick="unlock(this)">Unlock Price</button>
-        <div class="hidden-price">Available upon request</div>
+        <h3>Pre‑Litigation Strategy</h3>
+        <p>Risk mapping, demand letters, legal notices & responses to set the stage for resolution.</p>
       </div>
       <div class="card">
-        <h3>Dispute Resolution</h3>
-        <p>Pre-litigation, negotiation and strategy planning.</p>
-        <button onclick="unlock(this)">Unlock Price</button>
-        <div class="hidden-price">Available upon request</div>
+        <h3>Expert Drafting</h3>
+        <p>Contracts, agreements, pleadings, petitions, and all critical legal documents.</p>
       </div>
       <div class="card">
         <h3>Legal Research</h3>
-        <p>Precise, reliable legal research by professionals.</p>
-        <button onclick="unlock(this)">Unlock Price</button>
-        <div class="hidden-price">Available upon request</div>
+        <p>Custom memos on statutes, case law, and regulations for professionals & students.</p>
+      </div>
+      <div class="card">
+        <h3>Advisory & Opinions</h3>
+        <p>Sharp, tailored legal opinions and next‑step recommendations.</p>
       </div>
     </div>
+    <a href="services.html" class="btn">View All Services</a>
   </section>
 
-  <section class="intro-image">
-    <img src="https://images.unsplash.com/photo-1606312618560-2c8b2be9aa8f" alt="Legal Books and Technology">
+  <!-- Team Preview -->
+  <section class="team-preview container">
+    <h2>Meet Our Leaders</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=200&q=80" alt="Abhinav Dixit">
+        <h3>Abhinav Dixit</h3>
+        <p>Founder &amp; Managing Partner</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=200&q=80" alt="Vishwas Srivastava">
+        <h3>Vishwas Srivastava</h3>
+        <p>Senior Partner</p>
+      </div>
+    </div>
+    <a href="about.html" class="btn outline">View Full Team</a>
   </section>
 
+  <!-- Contact CTA -->
+  <section class="contact-cta container">
+    <h2>Ready to Get Started?</h2>
+    <p>Submit your request and our team will respond with a custom plan and clear pricing.</p>
+    <a href="contact.html" class="btn">Contact Us</a>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>&copy; 2025 ALC & PARTNERS. All Rights Reserved.</p>
+    <div class="container footer-flex">
+      <p>&copy; 2025 ALC &amp; PARTNERS. All rights reserved.</p>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </nav>
     </div>
   </footer>
 
-  <script>
-    function unlock(btn) {
-      btn.style.display = 'none';
-      btn.nextElementSibling.style.display = 'block';
-    }
-  </script>
 </body>
 </html>
