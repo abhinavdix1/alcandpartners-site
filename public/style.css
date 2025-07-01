@@ -1,4 +1,4 @@
-/* style.css — Sleek Maroon & Sky Blue Professional Theme */
+/* style.css — Sleek Maroon & Blue Professional Theme */
 
 /* Reset & Base */
 * {
@@ -16,7 +16,7 @@ body {
 /* Color Palette */
 :root {
   --maroon: #800000;
-  --skyblue: #87CEEB;
+  --blue: #87CEEB;
   --white: #ffffff;
   --text-dark: #222222;
   --bg-light: #f7f7f7;
