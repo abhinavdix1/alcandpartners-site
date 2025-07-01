@@ -1,72 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Services – ALC & PARTNERS</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <header>
-    <div class="container header-flex">
-      <div class="logo"><h1>ALC &amp; PARTNERS</h1></div>
-      <nav>
-        <a href="/">Home</a><a href="/about.html">About</a>
-        <a href="/services.html">Services</a><a href="/resources.html">Resources</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
+<section id="services" class="services container">
+  <h2>Our Services</h2>
+  <p>Select a category to explore sub‑services and unlock pricing:</p>
+
+  <div class="services-map">
+
+    <details>
+      <summary>
+        Pre‑Litigation / Pre‑Suit Drafting
+        <button class="unlock" onclick="unlockSection(this)">🔓 Unlock Prices</button>
+      </summary>
+      <ul>
+        <li>Settlement Letters</li>
+        <li>Demand Letters & Legal Notices</li>
+        <li>Response Letters & Notice Replies</li>
+        <li>Responses to Statutory & Regulatory Notices</li>
+        <li>Replies to Government Notices & Letters</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>
+        Drafting & Dispute Resolution
+        <button class="unlock" onclick="unlockSection(this)">🔓 Unlock Prices</button>
+      </summary>
+      <ul>
+        <li><strong>Transactional:</strong> Contracts, Agreements, Deeds</li>
+        <li><strong>Litigation:</strong> Pleadings, Petitions, Appeals (Civil, MSME, RERA, Consumer, Insurance Ombudsman)</li>
+        <li><strong>Arbitration:</strong> Statement of Claim (SoC), Statement of Defense (SoD)</li>
+        <li><strong>Dispute Resolution:</strong> Mediation & Conciliation</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>
+        Legal Research
+        <button class="unlock" onclick="unlockSection(this)">🔓 Unlock Prices</button>
+      </summary>
+      <p>Custom research memos on statutes, case law, regulations—ideal for students and professionals.</p>
+    </details>
+
+    <details>
+      <summary>
+        Advisory & Opinions
+        <button class="unlock" onclick="unlockSection(this)">🔓 Unlock Prices</button>
+      </summary>
+      <ul>
+        <li>Rights & Obligations Analysis</li>
+        <li>Contract Dispute Guidance</li>
+        <li>Property, Family & Criminal Law Advice</li>
+        <li>Consumer & Insurance Dispute Strategy</li>
+        <li>Legal Opinions on Validity, Enforceability & Compliance</li>
+      </ul>
+    </details>
+
+  </div>
+
+  <!-- Hidden pricing panel -->
+  <div id="pricing-panel" class="pricing-panel">
+    <div class="pricing-content">
+      <h3>Pricing Details</h3>
+      <p>Our fees are tailored to each engagement based on complexity and urgency. Please contact us for a precise quote.</p>
+      <button class="btn" onclick="closePricing()">Close</button>
     </div>
-  </header>
-  <main class="container">
-    <section>
-      <h2>Our Services</h2>
-      <article>
-        <h3>Pre‑Litigation & Pre‑Suit</h3>
-        <p>Strategic dispute‑aversion and early negotiations.</p>
-      </article>
-      <article>
-         <section class="services-preview">
-    <div class="container">
-      <div class="card">
-        <h3>Legal Drafting</h3>
-        <p>Custom documents crafted by experts.</p>
-        <button onclick="unlock(this)">Unlock Price</button>
-        <div class="hidden-price">Available upon request</div>
-      </div>
-      <div class="card">
-        <h3>Dispute Resolution</h3>
-        <p>Pre-litigation, negotiation and strategy planning.</p>
-        <button onclick="unlock(this)">Unlock Price</button>
-        <div class="hidden-price">Available upon request</div>
-      </div>
-      <div class="card">
-        <h3>Legal Research</h3>
-        <p>Precise, reliable legal research by professionals.</p>
-        <button onclick="unlock(this)">Unlock Price</button>
-        <div class="hidden-price">Available upon request</div>
-      </div>
-    </div>
-  </section>
-        <h3>Drafting & Documentation</h3>
-        <p>Notices, replies, agreements, pleadings, writs.</p>
-        <ul>
-          
-        </ul>
-      </article>
-      <article>
-        <h3>Legal Research</h3>
-        <p>Statutes, case law, regulatory analysis (up to 6 pages).</p>
-        
-      </article>
-      <article>
-        <h3>Advisory Opinions</h3>
-        <p>Written legal opinions on specific issues.</p>
-      
-      </article>
-      <p><a class="button" href="/contact.html">Request a Quote</a></p>
-    </section>
-  </main>
-  <footer>
-    <div class="container"><p>&copy; 2025 ALC &amp; PARTNERS.</p></div>
-  </footer>
-</body>
-</html>
+  </div>
+</section>
+
+<script>
+function unlockSection(btn) {
+  document.getElementById('pricing-panel').style.display = 'flex';
+  btn.blur();
+}
+function closePricing() {
+  document.getElementById('pricing-panel').style.display = 'none';
+}
+</script>
