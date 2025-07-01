@@ -11,7 +11,7 @@
       <div class="logo"><h1>ALC &amp; PARTNERS</h1></div>
       <nav>
         <a href="/">Home</a><a href="/about.html">About</a>
-        <a href="/services.html">Services</a><a href="/resources.html">Resources</a>
+        <a href="/services.html">Services</a>
         <a href="/contact.html">Contact</a>
       </nav>
     </div>
@@ -19,7 +19,7 @@
   <main class="container">
     <section>
       <h2>Get Your Quote</h2>
-      <p>Submit details for an enrolled advocate review. You’ll get an email with scope, fees, and next steps. No court work included.</p>
+      <p>Submit details for a review. You’ll get an email with scope, fees, and next steps. No court work included.</p>
       <form id="contact-form" method="POST" action="/api/contact">
         <div><label for="name">Full Name *</label><input id="name" name="name" type="text" required></div>
         <div><label for="email">Email *</label><input id="email" name="email" type="email" required></div>
@@ -29,7 +29,7 @@
             <option>Pre‑Litigation Services</option>
             <option>Drafting & Documentation</option>
             <option>Legal Research</option>
-            <option>Advisory Opinions</option>
+            <option>Advisory and Opinions</option>
           </select>
         </div>
         <div><label for="details">Details (optional)</label><textarea id="details" name="details" rows="4"></textarea></div>
@@ -53,12 +53,15 @@
           }
         });
       </script>
+      
       <p>Or email: <a href="mailto:contact@alcandpartners.com">contact@alcandpartners.com</a></p>
     </section>
+    
   </main>
   <footer>
     <div class="container">
       <p>&copy; 2025 ALC &amp; PARTNERS.</p>
+      
       <p>Services by enrolled advocates; no formal lawyer‑client relationship until engagement.</p>
     </div>
   </footer>
