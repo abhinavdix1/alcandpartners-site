@@ -1,4 +1,4 @@
-/* style.css — Sleek Maroon & Blue Professional Theme */
+/* style.css — Sleek Maroon & Dark Blue Theme, No Shadows, Clean & Readable */
 
 /* Reset & Base */
 * {
@@ -8,7 +8,7 @@
 }
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f7f7f7;
+  background-color: #fafafa;
   color: #222;
   line-height: 1.6;
 }
@@ -16,16 +16,16 @@ body {
 /* Color Palette */
 :root {
   --maroon: #800000;
-  --blue: #87CEEB;
+  --dark-blue: #002147;
   --white: #ffffff;
-  --text-dark: #222222;
-  --bg-light: #f7f7f7;
+  --light-gray: #f2f2f2;
+  --text: #222222;
 }
 
 /* Container */
 .container {
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 0 1rem;
 }
 
@@ -33,31 +33,30 @@ body {
 header.navbar {
   background-color: var(--maroon);
   padding: 1rem 0;
-  box-shadow: none;
 }
 header.navbar .logo {
   font-size: 2rem;
   font-weight: 700;
   color: var(--white);
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 nav {
-  background-color: var(--skyblue);
+  background-color: var(--dark-blue);
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 0.5rem 0;
 }
 nav a {
-  color: var(--maroon);
+  color: var(--white);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 nav a:hover,
 nav a.active {
-  color: var(--white);
+  color: var(--light-gray);
 }
 
 /* Hero Section */
@@ -68,7 +67,7 @@ nav a.active {
   padding: 4rem 1rem;
 }
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 .hero p {
@@ -76,8 +75,8 @@ nav a.active {
   margin-bottom: 2rem;
 }
 .hero .btn {
-  background-color: var(--skyblue);
-  color: var(--maroon);
+  background-color: var(--dark-blue);
+  color: var(--white);
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 4px;
@@ -86,34 +85,34 @@ nav a.active {
   transition: background-color 0.3s;
 }
 .hero .btn:hover {
-  background-color: #6AB8D8;
+  background-color: #00305b;
 }
 
-/* Section Headings */
+/* Section Titles */
 h2 {
   text-align: center;
   margin: 2rem 0 1rem;
   color: var(--maroon);
 }
 
-/* Cards & Grids */
+/* Card Grid Layout (no shadows) */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 .card {
-  background: var(--white);
+  background: var(--light-gray);
   border-radius: 6px;
   padding: 1.5rem;
-  transition: transform 0.2s;
+  transition: background 0.2s;
 }
 .card:hover {
-  transform: translateY(-4px);
+  background: #fff;
 }
 .card h3 {
-  color: var(--maroon);
+  color: var(--dark-blue);
   margin-bottom: 0.75rem;
 }
 .card p,
@@ -127,8 +126,8 @@ h2 {
 
 /* Unlock Button */
 .unlock {
-  background-color: var(--skyblue);
-  color: var(--maroon);
+  background-color: var(--dark-blue);
+  color: var(--white);
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -137,7 +136,7 @@ h2 {
   transition: background-color 0.3s;
 }
 .unlock:hover {
-  background-color: #6AB8D8;
+  background-color: #00305b;
 }
 
 /* Pricing Modal */
@@ -145,7 +144,7 @@ h2 {
   display: none;
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.4);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -163,6 +162,7 @@ h2 {
 }
 .pricing-box p {
   margin-bottom: 1.5rem;
+  color: var(--text);
 }
 .pricing-box .btn {
   background-color: var(--maroon);
@@ -177,8 +177,9 @@ h2 {
   background-color: #5a0000;
 }
 
-/* About & Team */
-.about p {
+/* About & Team Sections */
+.about p,
+.team p {
   margin-bottom: 1rem;
 }
 .team {
@@ -188,7 +189,7 @@ h2 {
   margin-top: 1.5rem;
 }
 .team-member {
-  background: var(--white);
+  background: var(--light-gray);
   padding: 1.5rem;
   border-radius: 6px;
 }
@@ -206,7 +207,7 @@ h2 {
 form {
   max-width: 500px;
   margin: 2rem auto;
-  background: var(--white);
+  background: var(--light-gray);
   padding: 2rem;
   border-radius: 6px;
 }
@@ -225,7 +226,7 @@ input, textarea {
 
 /* Footer */
 footer {
-  background-color: var(--navy);
+  background-color: var(--dark-blue);
   color: var(--white);
   text-align: center;
   padding: 1.5rem 0;
