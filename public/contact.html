@@ -5,6 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact – ALC &amp; PARTNERS</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-section {
+      padding: 2rem 1rem;
+    }
+
+    .contact-section h2 {
+      color: #800020;
+      margin-bottom: 1rem;
+    }
+
+    .contact-section p {
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .contact-form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      margin-top: 1.5rem;
+      background-color: #008080;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .contact-form button:hover {
+      background-color: #006666;
+    }
+
+    .contact-details {
+      margin-top: 3rem;
+      text-align: center;
+      color: #333;
+    }
+
+    .contact-details p {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -19,17 +89,31 @@
     </div>
   </header>
 
-  <main class="container">
-    <h1>Contact Us</h1>
-    <form class="contact-form">
-      <label>Name</label>
-      <input type="text" placeholder="Your Name" required />
-      <label>Email</label>
-      <input type="email" placeholder="you@example.com" required />
-      <label>Message</label>
-      <textarea placeholder="How can we help?" required></textarea>
-      <button type="submit" class="btn btn-primary">Send Message</button>
+  <main class="container contact-section">
+    <h2>Contact Us</h2>
+    <p>Use the form below to reach out with your query. We’ll respond within 24–48 hours with a custom plan and pricing.</p>
+
+    <form class="contact-form" method="post" action="#">
+      <label for="name">Your Name *</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email *</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" />
+
+      <label for="message">Your Message *</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Submit</button>
     </form>
+
+    <div class="contact-details">
+      <p>Email: <a href="mailto:contact@alcandpartners.com</a></p>
+      <p>Phone/WhatsApp: +91 7042 12 26 37</p>
+      <p>Operating remotely across India.</p>
+    </div>
   </main>
 
   <footer>
