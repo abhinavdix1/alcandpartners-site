@@ -7,9 +7,40 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    /* Ensure overlay is shown and site content is hidden until allowed */
     #disclaimer-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    .disclaimer-modal {
+      background: #fff;
+      color: #333;
+      max-width: 500px;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .disclaimer-modal h2 {
+      margin-top: 0;
+      color: #800000; /* Maroon */
+    }
+    .btn.btn-primary {
+      background-color: #008080; /* Teal */
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn.btn-primary:hover {
+      background-color: #006666;
     }
     #site-content {
       display: none;
@@ -18,7 +49,7 @@
 </head>
 <body>
 
-  <!-- Disclaimer Overlay -->
+  <!-- Disclaimer (only shown on first visit to homepage) -->
   <div id="disclaimer-overlay">
     <div class="disclaimer-modal">
       <h2>Disclaimer</h2>
@@ -90,7 +121,7 @@
 
     <footer>
       <div class="container footer-flex">
-        <p>&copy; 2025 ALC &amp; PARTNERS</p>
+        <p>&copy; 2025 ALC & PARTNERS</p>
         <nav>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Use</a>
@@ -105,13 +136,14 @@
       const content  = document.getElementById('site-content');
       const agreeBtn = document.getElementById('agree-button');
 
-      // Show or hide based on prior consent
       if (localStorage.getItem('disclaimerAccepted') === 'true') {
         overlay.style.display = 'none';
         content.style.display = 'block';
+      } else {
+        overlay.style.display = 'flex';
+        content.style.display = 'none';
       }
 
-      // On click: store agreement & show site
       agreeBtn.addEventListener('click', () => {
         localStorage.setItem('disclaimerAccepted', 'true');
         overlay.style.display = 'none';
@@ -121,4 +153,3 @@
   </script>
 </body>
 </html>
-
