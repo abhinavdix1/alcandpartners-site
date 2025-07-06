@@ -5,6 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services – ALC &amp; PARTNERS</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Minimal extra styles for modal */
+    .pricing-modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .pricing-box {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .pricing-box h3 {
+      margin-top: 0;
+      color: #800020;
+    }
+
+    .pricing-box p {
+      margin: 1rem 0;
+    }
+
+    .pricing-box a {
+      color: #008080;
+      text-decoration: underline;
+    }
+
+    .pricing-box::after {
+      content: '×';
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .unlock {
+      margin-top: 1rem;
+      background-color: #800020;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .unlock:hover {
+      background-color: #a02a2a;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .service-card h3 {
+      margin-top: 0;
+      color: #800020;
+    }
+
+    .service-card ul {
+      padding-left: 1.2rem;
+    }
+
+    .service-card ul li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -39,7 +129,6 @@
           <button class="unlock" onclick="showPricing()">🔓 Unlock Prices</button>
         </div>
 
-        
         <div class="service-card">
           <h3>Drafting and Dispute Resolution Services</h3>
           <ul>
@@ -51,14 +140,12 @@
           <button class="unlock" onclick="showPricing()">🔓 Unlock Prices</button>
         </div>
 
-        
         <div class="service-card">
           <h3>Legal Research Services</h3>
           <p>Custom research memos on statutes, case laws, Legal news, and regulatory frameworks — ideal for students & professionals.</p>
           <button class="unlock" onclick="showPricing()">🔓 Unlock Prices</button>
         </div>
 
-        
         <div class="service-card">
           <h3>Legal Advice Services</h3>
           <ul>
@@ -70,36 +157,24 @@
           <button class="unlock" onclick="showPricing()">🔓 Unlock Prices</button>
         </div>
 
-        
         <div class="service-card">
           <h3>Legal Opinions Services</h3>
           <p>In‑depth opinions on how law applies to your facts, covering validity, enforceability, and compliance.</p>
           <button class="unlock" onclick="showPricing()">🔓 Unlock Prices</button>
-          
         </div>
 
-        
       </div>
     </section>
-
-    
   </main>
 
-    
   <!-- Pricing Modal -->
-  <div id="pricing-modal" class="pricing-modal">
+  <div id="pricing-modal" class="pricing-modal" onclick="closePricing(event)">
     <div class="pricing-box">
       <h3>Pricing Details</h3>
-      
       <p>All fees are quoted based on service complexity and turnaround time. Please <a href="contact.html">contact us</a> for a precise estimate.</p>
-
-      
     </div>
-    
   </div>
 
-
-  
   <footer>
     <div class="container">
       <p>&copy; 2025 ALC &amp; PARTNERS. All rights reserved.</p>
@@ -110,11 +185,13 @@
     function showPricing() {
       document.getElementById('pricing-modal').style.display = 'flex';
     }
-    function closePricing() {
-      document.getElementById('pricing-modal').style.display = 'none';
+
+    function closePricing(event) {
+      const modal = document.getElementById('pricing-modal');
+      if (event.target === modal || event.target.textContent === '×') {
+        modal.style.display = 'none';
+      }
     }
   </script>
 </body>
 </html>
-
-
