@@ -1,14 +1,13 @@
 /* style.css */
-/* Sleek Maroon & Cream Teal Theme — Shallow Shadows, Clean & Readable */
+/* Sleek Maroon & Teal Theme — Shallow Shadows, Clean & Readable */
 
 :root {
   /* Color Palette */
-  --maroon:    #800000;  /* Deep red-maroon */
-  --cream:     #fffdd0;  /* Soft cream */
-  --teal:      #008080;  /* Standard teal */
+  --maroon:    #800000;
+  --teal:      #008080;
   --white:     #ffffff;
   --light-gray:#f2f2f2;
-  --text:      #222222;  /* Dark charcoal for text */
+  --text:      #222222;
 
   /* Typography */
   --font-sans: 'Helvetica Neue', Arial, sans-serif;
@@ -38,14 +37,14 @@ body {
   font-size: 1rem;
   line-height: var(--line-height);
   color: var(--text);
-  background-color: var(--cream);
+  background-color: var(--white);
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   color: var(--maroon);
-  line-height: 1.2;
   margin-bottom: 0.5em;
+  line-height: 1.2;
   font-weight: 600;
 }
 
@@ -54,144 +53,5 @@ h2 { font-size: 2rem; }
 h3 { font-size: 1.75rem; }
 h4 { font-size: 1.5rem; }
 h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
-
-/* Paragraphs */
-p {
-  margin-bottom: 1em;
-}
-
-/* Links */
-a {
-  color: var(--teal);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-a:hover,
-a:focus {
-  color: var(--maroon);
-  border-color: var(--maroon);
-}
-
-/* Buttons */
-.button,
-.btn {
-  display: inline-block;
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1.2;
-  padding: 0.6em 1.2em;
-  border: none;
-  border-radius: 2px;
-  box-shadow: var(--shadow-shallow);
-  cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-  text-align: center;
-  text-decoration: none;
-}
-
-.button:active,
-.btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 0.5px 1.5px rgba(0, 0, 0, 0.1);
-}
-
-/* Primary Button */
-.btn-primary {
-  background-color: var(--maroon);
-  color: var(--white);
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: #660000; /* Darker maroon */
-}
-
-/* Secondary Button */
-.btn-secondary {
-  background-color: var(--teal);
-  color: var(--white);
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus {
-  background-color: #006666; /* Darker teal */
-}
-
-/* Form Elements */
-input,
-textarea,
-select,
-button {
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 0.5em;
-  border: none;
-  border-radius: 2px;
-  box-shadow: var(--shadow-shallow);
-  background-color: var(--white);
-  color: var(--text);
-  transition: box-shadow 0.2s ease;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--teal);
-}
-
-/* Lists */
-ul, ol {
-  margin-left: 1.5em;
-  margin-bottom: 1em;
-}
-
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1.5em;
-  box-shadow: var(--shadow-shallow);
-  background-color: var(--white);
-}
-
-th, td {
-  padding: 0.75em 1em;
-  text-align: left;
-  border-bottom: 1px solid var(--light-gray);
-}
-
-th {
-  background-color: var(--light-gray);
-  font-weight: 600;
-}
-
-/* Images & Media */
-img, video {
-  max-width: 100%;
-  display: block;
-  border-radius: 2px;
-  box-shadow: var(--shadow-shallow);
-}
-
-/* Utility Classes */
-.text-center { text-align: center; }
-.mt-1 { margin-top: 0.25em; }
-.mt-2 { margin-top: 0.5em; }
-.mt-3 { margin-top: 1em; }
-.mb-1 { margin-bottom: 0.25em; }
-.mb-2 { margin-bottom: 0.5em; }
-.mb-3 { margin-bottom: 1em; }
-
-/* Footer */
-footer {
-  padding: 2em 1em;
-  background-color: var(--maroon);
-  color: var(--white);
-  text-align: center;
-  box-shadow: var(--shadow-shallow);
-}
+h6
 
