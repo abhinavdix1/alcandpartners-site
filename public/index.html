@@ -1,4 +1,28 @@
-  <!-- Disclaimer Overlay (index.html only) -->
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALC & PARTNERS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Disclaimer Overlay (index.html only) -->
+  <div id="disclaimer-overlay">
+    <div class="disclaimer-modal">
+      <p>
+        The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. 
+        By accessing this website, www.alcandpartners.com you acknowledge and confirm that you are seeking information 
+        relating to ALC &amp; Partners of your own accord and that there has been no form of solicitation, advertisement 
+        or inducement by ALC &amp; Partners or its members. The content of this website is for informational purposes 
+        and should not be interpreted as soliciting or advertisement. No information provided on this website should 
+        be construed as legal advice.
+      </p>
+      <button id="agree-button">I Agree</button>
+    </div>
+  </div>  <!-- Disclaimer Overlay (index.html only) -->
   <div id="disclaimer-overlay">
     <div class="disclaimer-modal">
       <p>
@@ -12,18 +36,7 @@
       <button id="agree-button">I Agree</button>
     </div>
   </div>
-
-<!-- public/index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALC & PARTNERS</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-</head>
-<body>
+  
   <!-- Header -->
   <header class="navbar">
     <div class="container header-flex">
@@ -125,6 +138,22 @@
       </nav>
     </div>
   </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.getElementById('disclaimer-overlay');
+    const agreeBtn = document.getElementById('agree-button');
+
+    // Only show if NOT already agreed
+    if (localStorage.getItem('disclaimerAgreed') === 'true') {
+      overlay.style.display = 'none';
+    }
+
+    agreeBtn.addEventListener('click', function() {
+      localStorage.setItem('disclaimerAgreed', 'true');
+      overlay.style.display = 'none';
+    });
+  });
+</script>
 </body>
 </html>
 
