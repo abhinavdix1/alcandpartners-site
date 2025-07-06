@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ALC & PARTNERS</title>
+  <title>ALC & PARTNERS</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Ensure overlay is shown and site content is hidden until allowed */
+    #disclaimer-overlay {
+      display: flex;
+    }
+    #site-content {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,7 +23,9 @@
     <div class="disclaimer-modal">
       <h2>Disclaimer</h2>
       <p>
-        The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. By accessing the website <strong>www.alcandpartners.com</strong>, you confirm you seek information of your own accord, with no solicitation or inducement. Content is informational only.
+        The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner.
+        By accessing the website <strong>www.alcandpartners.com</strong>, you confirm you seek information of your own accord, with no solicitation or inducement. 
+        Content is informational only.
       </p>
       <button id="agree-button" class="btn btn-primary">I Agree</button>
     </div>
@@ -24,7 +35,7 @@
   <div id="site-content">
     <header class="navbar">
       <div class="container header-flex">
-        <div class="logo">ALC &amp; PARTNERS</div>
+        <div class="logo">ALC & PARTNERS</div>
         <nav>
           <a href="index.html" class="active">Home</a>
           <a href="about.html">About</a>
@@ -44,7 +55,7 @@
 
     <section class="about-preview container">
       <h2>About Us</h2>
-      <p>40+ years of combined in‑house &amp; courtroom experience - lightweight, targeted support with no bulky retainers and hidden fees.</p>
+      <p>40+ years of combined in‑house and courtroom experience — lightweight and targeted support with no bulky retainers or hidden fees.</p>
       <a href="about.html" class="btn btn-outline">Learn More</a>
     </section>
 
@@ -53,19 +64,19 @@
       <div class="card-grid">
         <div class="card">
           <h3>Pre‑Litigation</h3>
-          <p>Risk mapping, Legal notices, Legal Responses, Mediation and Concilliation, Demand letters, Negotiations, Strategy, etc - to set the stage for resolution.</p>
+          <p>Risk mapping, Legal Notices, Legal responses, Demand letters, Mediation, Negotiations &amp; Strategy - to set the stage for resolution.</p>
         </div>
         <div class="card">
           <h3>Drafting</h3>
-          <p>Contracts, Agreements, Pleadings, Petitions, Complaints, Aplications, etc — court ready critical documents crafted precisely.</p>
+          <p>Contracts, Agreements, Pleadings, Petitions, Applications, Complaints — court ready critical documents crafted precisely.</p>
         </div>
         <div class="card">
           <h3>Research</h3>
-          <p>Deep‑dive research memos on statutes, case laws, regulations, Legal news, etc - for professionals and students.</p>
+          <p>Deep‑dive memos on statutes, legal news, case laws &amp; regulations, rules, etc - for professionals and students.</p>
         </div>
         <div class="card">
           <h3>Advisory</h3>
-          <p>Tailored Legal opinions, Expert advice, Rights and Obligations analysis, etc - next step recommendations.</p>
+          <p>Tailored legal opinions, Advisory, Rights and Obligation analysis - next step recommendations.</p>
         </div>
       </div>
       <a href="services.html" class="btn btn-primary">View All Services</a>
@@ -91,21 +102,22 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const overlay  = document.getElementById('disclaimer-overlay');
-      const agreeBtn = document.getElementById('agree-button');
       const content  = document.getElementById('site-content');
+      const agreeBtn = document.getElementById('agree-button');
 
-      if (localStorage.getItem('disclaimerAgreed') === 'true') {
+      // Show or hide based on prior consent
+      if (localStorage.getItem('disclaimerAccepted') === 'true') {
         overlay.style.display = 'none';
-        content.style.display  = 'block';
+        content.style.display = 'block';
       }
 
+      // On click: store agreement & show site
       agreeBtn.addEventListener('click', () => {
-        localStorage.setItem('disclaimerAgreed', 'true');
+        localStorage.setItem('disclaimerAccepted', 'true');
         overlay.style.display = 'none';
-        content.style.display  = 'block';
+        content.style.display = 'block';
       });
     });
   </script>
 </body>
 </html>
-
