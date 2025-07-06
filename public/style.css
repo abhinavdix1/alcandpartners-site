@@ -18,16 +18,16 @@ h1, h2, h3 {
   margin-bottom: 1rem;
 }
 
+p, li, label {
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
 a {
-  text-decoration: none;
   color: #008080; /* Teal */
 }
 
-p {
-  margin-bottom: 1rem;
-}
-
-/* Container */
+/* Containers */
 .container {
   max-width: 1080px;
   margin: auto;
@@ -41,45 +41,39 @@ p {
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
 .header-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
-
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
 }
-
 .navbar nav a {
   margin-left: 1.5rem;
   color: #fff;
   font-weight: 600;
   transition: opacity 0.3s ease;
 }
-
 .navbar nav a:hover,
 .navbar nav a.active {
   opacity: 0.85;
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
   background: linear-gradient(to right, #6e1423, #008080);
   color: #fff;
   text-align: center;
   padding: 4rem 2rem;
 }
-
 .hero h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-
 .hero p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
@@ -88,33 +82,27 @@ p {
 /* Buttons */
 .btn {
   padding: 0.75rem 1.5rem;
-  font-weight: 600;
   border-radius: 6px;
-  border: none;
+  font-weight: 600;
   cursor: pointer;
-  text-align: center;
   display: inline-block;
-  font-size: 1rem;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease;
 }
-
 .btn-primary {
   background-color: #008080;
   color: #fff;
+  border: none;
 }
-
 .btn-primary:hover {
   background-color: #006b6b;
 }
-
 .btn-outline {
   background-color: transparent;
-  color: #008080;
-  border: 2px solid #008080;
+  border: 2px solid #6e1423;
+  color: #6e1423;
 }
-
 .btn-outline:hover {
-  background-color: #008080;
+  background-color: #6e1423;
   color: #fff;
 }
 
@@ -124,33 +112,116 @@ p {
 .contact-cta {
   margin: 3rem 0;
 }
-
 .about-preview h2,
 .services-preview h2,
 .contact-cta h2 {
   font-size: 1.75rem;
-  margin-bottom: 1rem;
 }
 
 /* Cards */
 .card-grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   margin: 2rem 0;
 }
-
 .card {
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-left: 5px solid #008080;
   padding: 1.5rem;
   border-radius: 8px;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Team Section */
+.team {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 2rem 0;
+}
+.team-member {
+  background-color: #f9f9f9;
+  border-left: 5px solid #008080;
+  padding: 1.5rem;
+  border-radius: 6px;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.contact-form label {
+  display: block;
+  font-weight: 600;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.contact-form button {
+  margin-top: 1.5rem;
+  background-color: #6e1423;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.contact-form button:hover {
+  background-color: #8c2433;
+}
+
+/* Disclaimer Modal */
+#disclaimer-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(30,30,30,0.85);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+}
+.disclaimer-modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+.disclaimer-modal h2 {
+  margin-bottom: 1rem;
+  color: #6e1423;
+}
+.disclaimer-modal p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Contact Details */
+.contact-details {
+  text-align: center;
+  margin-top: 2rem;
+}
+.contact-details p {
+  margin-bottom: 0.5rem;
 }
 
 /* Footer */
@@ -160,80 +231,15 @@ footer {
   padding: 2rem 1rem;
   text-align: center;
 }
-
 .footer-flex {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
 }
-
 .footer-flex nav a {
   color: #fff;
-  margin: 0 0.5rem;
-  font-size: 0.95rem;
-}
-
-/* Disclaimer Modal Overlay */
-#disclaimer-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(30, 30, 30, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  padding: 1rem;
-}
-
-.disclaimer-modal {
-  background-color: #fff;
-  max-width: 600px;
-  padding: 2rem;
-  border-radius: 8px;
-  text-align: center;
-  color: #222;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.disclaimer-modal h2 {
-  margin-bottom: 1rem;
-  color: #6e1423;
-}
-
-.disclaimer-modal p {
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-/* Team Section (About Page) */
-.team {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  margin: 2rem 0;
-}
-
-.team-member {
-  background-color: #f9f9f9;
-  padding: 1.5rem;
-  border-left: 5px solid #6e1423;
-  border-radius: 6px;
-}
-
-.team-member h3 {
-  margin-bottom: 0.5rem;
-  color: #421010;
-}
-
-.team-member ul {
-  list-style: disc inside;
-  margin-top: 0.5rem;
+  font-size: 0.9rem;
 }
 
 /* Responsive */
@@ -243,17 +249,21 @@ footer {
     flex-direction: column;
     align-items: center;
   }
-
   .navbar nav a {
     margin: 0.5rem 0;
   }
-
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
-
-  .btn {
-    font-size: 0.95rem;
-    padding: 0.6rem 1.2rem;
+  .card-grid,
+  .team {
+    grid-template-columns: 1fr;
   }
 }
+
+
+
+
+
+
+
