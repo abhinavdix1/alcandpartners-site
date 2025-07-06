@@ -2,48 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALC &amp; PARTNERS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ALC & PARTNERS</title>
   <link rel="stylesheet" href="style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const overlay  = document.getElementById('disclaimer-overlay');
-      const agreeBtn = document.getElementById('agree-button');
-      const content  = document.getElementById('site-content');
-
-      if (localStorage.getItem('disclaimerAgreed') === 'true') {
-        overlay.style.display = 'none';
-        content.style.display  = 'block';
-      }
-
-      agreeBtn.addEventListener('click', () => {
-        localStorage.setItem('disclaimerAgreed', 'true');
-        overlay.style.display = 'none';
-        content.style.display  = 'block';
-      });
-    });
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <!-- Disclaimer Overlay (homepage only) -->
+  <!-- Disclaimer Overlay -->
   <div id="disclaimer-overlay">
     <div class="disclaimer-modal">
       <h2>Disclaimer</h2>
       <p>
-        The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner.
-        By accessing the website <strong>www.alcandpartners.com</strong>, you confirm that you seek information of your
-        own accord, with no solicitation or inducement by ALC & Partners. Content is informational only.
+        The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. By accessing the website <strong>www.alcandpartners.com</strong>, you confirm you seek information of your own accord, with no solicitation or inducement. Content is informational only.
       </p>
-      <button id="agree-button">I Agree</button>
+      <button id="agree-button" class="btn btn-primary">I Agree</button>
     </div>
   </div>
 
-  <!-- Main Site Content -->
+  <!-- Site Content -->
   <div id="site-content">
     <header class="navbar">
       <div class="container header-flex">
@@ -58,7 +35,7 @@
     </header>
 
     <section class="hero">
-      <div class="container hero-content">
+      <div class="container">
         <h1>Precise, Adept and Expert Legal Solutions — Delivered Securely and Remotely</h1>
         <p>Empowering you every step of the way with on‑demand, unbundled legal services via a fully secure online workflow.</p>
         <a href="services.html" class="btn btn-primary">Explore Services</a>
@@ -67,7 +44,7 @@
 
     <section class="about-preview container">
       <h2>About Us</h2>
-      <p>Our team combines over 40 years of in‑house and courtroom experience to offer targeted legal support — no bulky retainers or hidden fees. Engage only what you need, when you need it.</p>
+      <p>40+ years of combined in‑house &amp; courtroom experience - lightweight, targeted support with no bulky retainers and hidden fees.</p>
       <a href="about.html" class="btn btn-outline">Learn More</a>
     </section>
 
@@ -76,19 +53,19 @@
       <div class="card-grid">
         <div class="card">
           <h3>Pre‑Litigation</h3>
-          <p>Risk mapping, strategy, Negotiations, Demand letters, Legal Notices & Responses, etc. - to set the stage for resolution.</p>
+          <p>Risk mapping, Legal notices, Legal Responses, Mediation and Concilliation, Demand letters, Negotiations, Strategy, etc - to set the stage for resolution.</p>
         </div>
         <div class="card">
           <h3>Drafting</h3>
-          <p>Contracts, Agreements, Pleadings, Petitions, Complaints, etc. - court ready critical documents crafted precisely.</p>
+          <p>Contracts, Agreements, Pleadings, Petitions, Complaints, Aplications, etc — court ready critical documents crafted precisely.</p>
         </div>
         <div class="card">
           <h3>Research</h3>
-          <p>Deep‑dive memos on statutes, case laws, regulations, etc. - for professionals and students.</p>
+          <p>Deep‑dive research memos on statutes, case laws, regulations, Legal news, etc - for professionals and students.</p>
         </div>
         <div class="card">
           <h3>Advisory</h3>
-          <p>Tailored legal opinions, advisory, rights and obligation analysis - next‑step recommendations.</p>
+          <p>Tailored Legal opinions, Expert advice, Rights and Obligations analysis, etc - next step recommendations.</p>
         </div>
       </div>
       <a href="services.html" class="btn btn-primary">View All Services</a>
@@ -110,7 +87,25 @@
       </div>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const overlay  = document.getElementById('disclaimer-overlay');
+      const agreeBtn = document.getElementById('agree-button');
+      const content  = document.getElementById('site-content');
+
+      if (localStorage.getItem('disclaimerAgreed') === 'true') {
+        overlay.style.display = 'none';
+        content.style.display  = 'block';
+      }
+
+      agreeBtn.addEventListener('click', () => {
+        localStorage.setItem('disclaimerAgreed', 'true');
+        overlay.style.display = 'none';
+        content.style.display  = 'block';
+      });
+    });
+  </script>
 </body>
 </html>
-
 
