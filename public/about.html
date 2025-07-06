@@ -1,78 +1,112 @@
-<!-- public/about.html -->
+<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About – ALC &amp; PARTNERS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALC & PARTNERS</title>
   <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
+  <!-- Header -->
   <header class="navbar">
-    <div class="container">
+    <div class="container header-flex">
       <div class="logo">ALC &amp; PARTNERS</div>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="about">
-      <h1>About ALC &amp; PARTNERS</h1>
-      <p>
-        ALC &amp; Partners is your on‑demand legal sidekick—delivering lightweight, unbundled services through a fully secure online workflow. 
-        Need to nip a dispute in the bud? Our pre‑litigation/pre‑suit team will map out your risks, provide notices, responses, letters, and set the stage for negotiation. 
-        When talks stall, our dispute‑resolution experts step in with mediation, conciliation, arbitration, or settlement strategies.
-      </p>
-      <p>
-        From rock‑solid contracts, deeds, agreements, and corporate policies to court‑ready pleadings, petitions, complaints, appeals, suits, and other filings, our drafting squad has you covered. 
-        Law students and professionals can tap into our deep‑dive legal research hub for case analyses, memos, and statutory interpretations, while our senior counsel delivers sharp, tailored opinions on demand. 
-        And when the moment calls for formal engagement, filings, or court appearances, we’ll seamlessly help clients engage an advocate anywhere in India as required. 
-        The firm's expertise spans a wide array of legal domains, including the Insolvency and Bankruptcy Code (IBC), Consumer Law, Real Estate and Property Laws, Labour and Employment Laws, Company and Commercial Laws, Insurance Law, Arbitration and Dispute Resolution, Criminal Law, Debt Recovery Laws, and other allied legal matters.
-      </p>
-
-      <h2>Who We Are</h2>
-      <div class="team">
-        <div class="team-member">
-          <h3>Abhinav Dixit</h3>
-          <p><em>Founder &amp; Managing Partner</em></p>
-          <ul>
-            <li>Spearheads corporate litigation advisory, drafting, research, and risk‑assessment services for clients across India.</li>
-            <li>Experienced lawyer and former in‑house counsel for corporations in the real estate, tourism, forex, FMCG, retail, automobile, and NBFC sectors (Delhi NCR &amp; Mumbai).</li>
-            <li>BA‑LLB (Hons), ALS Delhi, Guru Gobind Singh Indraprastha University, New Delhi.</li>
-          </ul>
-        </div>
-        <div class="team-member">
-          <h3>Kunvar Vishwas Srivastava</h3>
-          <p><em>Senior Partner</em></p>
-          <ul>
-            <li>Seasoned advocate and consultant dividing his time between Lucknow, Noida, and Allahabad.</li>
-            <li>Expertise in litigation strategy, regulatory laws, state laws and appellate practice.</li>
-            <li>BA‑LLB (Hons), ALS Delhi, Guru Gobind Singh Indraprastha University, New Delhi.</li>
-          </ul>
-        </div>
-      </div>
-
-      <h2>Our Network</h2>
-      <p>
-        We are a team of seasoned lawyers with over 40 years of combined experience, offering expert drafting, legal research, and advisory services, operating from Delhi NCR, Lucknow, Allahabad, Mumbai, and Bengaluru.
-      </p>
-
-      <div class="disclaimer">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>
+          "Secure and Remote Legal Solutions — Empowering You Every Step of the Way"
+        </h1>
         <p>
-          🛡️ <strong>Disclaimer:</strong> No formal lawyer‑client relationship exists until engagement for representation, including filings or court appearances.
+          ALC &amp; PARTNERS delivers on‑demand, unbundled legal services — from pre
+          litigation strategy and services to drafting, research, advisory, and
+          opinions — through a fully secure online workflow.
+        </p>
+        <a href="services.html" class="btn btn-primary">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="about-preview container">
+    <h2>About Us</h2>
+    <p>
+      Our team combines over 40 years of in‑house and courtroom experience to
+      offer lightweight, targeted legal support—no bulky retainers or hidden
+      fees. Engage only what you need, when you need it.
+    </p>
+    <a href="about.html" class="btn btn-outline">Learn More</a>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="services-preview container">
+    <h2>Core Services</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Pre‑Litigation Strategy &amp; Services</h3>
+        <p>
+          Risk mapping, negotiations, demand letters, legal notices, responses,
+          and strategic planning to set the stage for resolution.
         </p>
       </div>
-    </section>
-  </main>
+      <div class="card">
+        <h3>Expert Drafting</h3>
+        <p>
+          Contracts, agreements, pleadings, petitions, complaints, and all
+          critical court-ready legal documents.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Legal Research</h3>
+        <p>
+          Custom memos on statutes, case law, and regulations—for professionals
+          and students.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Advisory &amp; Opinions</h3>
+        <p>
+          Precise legal advisory, tailored opinions, and next-step
+          recommendations.
+        </p>
+      </div>
+    </div>
+    <a href="services.html" class="btn btn-primary">View All Services</a>
+  </section>
 
+  <!-- Contact CTA -->
+  <section class="contact-cta container">
+    <h2>Ready to Get Started?</h2>
+    <p>
+      Submit your request and our team will respond with a custom plan and
+      transparent pricing.
+    </p>
+    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <div class="container">
+    <div class="container footer-flex">
       <p>&copy; 2025 ALC &amp; PARTNERS. All rights reserved.</p>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </nav>
     </div>
   </footer>
 </body>
