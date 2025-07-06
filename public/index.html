@@ -3,27 +3,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ALC & PARTNERS</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Disclaimer Overlay (index.html only) -->
-  <div id="disclaimer-overlay">
-    <div class="disclaimer-modal">
-      
+
+  <!-- Disclaimer Modal -->
+  <div class="disclaimer-overlay" id="disclaimerModal">
+    <div class="disclaimer-box">
+      <h2>Disclaimer</h2>
       <p>
-        The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. 
-        By accessing the website www.alcandpartners.com, you acknowledge and confirm that you are seeking information 
-        relating to ALC &amp; Partners of your own accord and that there has been no form of solicitation, advertisement 
-        or inducement by ALC &amp; Partners. The content of this website is for informational purposes 
-        and should not be interpreted as soliciting or advertisement.
+        The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner.
+        By accessing this website, <strong>www.alcandpartners.com</strong>, you acknowledge and confirm that you are
+        seeking information relating to ALC &amp; Partners of your own accord and that there has been no form of
+        solicitation, advertisement or inducement by ALC &amp; Partners or its members. The content of this website is for
+        informational purposes only and should not be interpreted as soliciting or advertisement. No information provided
+        here should be construed as legal advice.
       </p>
-      
-      <button id="agree-button">I Agree</button>
+      <button id="agreeButton">I Agree</button>
     </div>
-  
+  </div>
+
   <!-- Header -->
   <header class="navbar">
     <div class="container header-flex">
@@ -37,16 +40,13 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-content">
       <div class="hero-text">
-        <h1>“Secure and Remote Legal Solutions — Empowering You Every Step of the Way”</h1>
-        <p>
-          ALC &amp; PARTNERS delivers on-demand, unbundled legal services—from pre-litigation strategy and services 
-          to drafting, research, advisory, and opinions—through a fully secure online workflow.
-        </p>
-        <a href="services.html" class="btn btn-primary">Explore Services</a>
+        <h1>"Secure and Remote Legal Solutions — Empowering You Every Step of the Way"</h1>
+        <p>ALC &amp; PARTNERS delivers on‑demand, unbundled legal services — from pre-litigation strategy and services to drafting, research, advisory, and opinions — through a fully secure online workflow.</p>
+        <a href="services.html" class="btn">Explore Services</a>
       </div>
     </div>
   </section>
@@ -54,11 +54,8 @@
   <!-- About Preview -->
   <section class="about-preview container">
     <h2>About Us</h2>
-    <p>
-      Our team combines over 40 years of in-house and courtroom experience to offer lightweight, 
-      targeted legal support—no bulky retainers or hidden fees. Engage only what you need, when you need it.
-    </p>
-    <a href="about.html" class="btn btn-outline">Learn More</a>
+    <p>Our team combines over 40 years of in‑house and courtroom experience to offer lightweight, targeted legal support—no bulky retainers or hidden fees. Engage only what you need, when you need it.</p>
+    <a href="about.html" class="btn outline">Learn More</a>
   </section>
 
   <!-- Services Preview -->
@@ -66,53 +63,30 @@
     <h2>Core Services</h2>
     <div class="card-grid">
       <div class="card">
-        <h3>Pre-Litigation Strategy & Services</h3>
-        <p>
-          Risk mapping, negotiations, demand letters & legal notices, responses, and strategic 
-          planning to set the stage for resolution.
-        </p>
+        <h3>Pre‑Litigation Strategy and Services</h3>
+        <p>Risk mapping, Negotiations, Strategy, Demand letters and Legal notices, responses etc. to set the stage for resolution.</p>
       </div>
       <div class="card">
         <h3>Expert Drafting</h3>
-        <p>
-          Contracts, agreements, pleadings, petitions, complaints, and all critical court-ready legal documents.
-        </p>
+        <p>Contracts, Agreements, Pleadings, Petitions, Complaints, and all critical Court Ready legal documents.</p>
       </div>
       <div class="card">
         <h3>Legal Research</h3>
-        <p>
-          Custom memos on statutes, case law, and regulations—for professionals and students.
-        </p>
+        <p>Custom memos on statutes, case law, and regulations, etc. for professionals & students.</p>
       </div>
       <div class="card">
         <h3>Advisory & Opinions</h3>
-        <p>
-          Precise legal advisory, tailored opinions, and next-step recommendations.
-        </p>
+        <p>Legal Advisory, Sharp & tailored legal opinions and next‑step recommendations.</p>
       </div>
     </div>
-    <a href="services.html" class="btn btn-primary">View All Services</a>
-  </section>
-
-  <!-- Trusted By Section -->
-  <section class="trusted-by container">
-    <h2>Trusted by Leading Legal Platforms</h2>
-    <ul class="trusted-list">
-      <li><a href="https://www.law.cornell.edu/" target="_blank" rel="noopener">Cornell Legal Information Institute</a></li>
-      <li><a href="https://www.legalzoom.com/" target="_blank" rel="noopener">LegalZoom</a></li>
-      <li><a href="https://www.findlaw.com/" target="_blank" rel="noopener">FindLaw</a></li>
-      <li><a href="https://www.lexisnexis.com/" target="_blank" rel="noopener">LexisNexis</a></li>
-      <li><a href="https://www.supremecourt.gov/" target="_blank" rel="noopener">U.S. Supreme Court</a></li>
-    </ul>
+    <a href="services.html" class="btn">View All Services</a>
   </section>
 
   <!-- Contact CTA -->
   <section class="contact-cta container">
     <h2>Ready to Get Started?</h2>
-    <p>
-      Submit your request and our team will respond with a custom plan and transparent pricing.
-    </p>
-    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+    <p>Submit your request and our team will respond with a custom plan and clear pricing.</p>
+    <a href="contact.html" class="btn">Contact Us</a>
   </section>
 
   <!-- Footer -->
@@ -120,28 +94,9 @@
     <div class="container footer-flex">
       <p>&copy; 2025 ALC &amp; PARTNERS. All rights reserved.</p>
       <nav>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
-      </nav>
-    </div>
-  </footer>
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const overlay = document.getElementById('disclaimer-overlay');
-    const agreeBtn = document.getElementById('agree-button');
-
-    // Only show if NOT already agreed
-    if (localStorage.getItem('disclaimerAgreed') === 'true') {
-      overlay.style.display = 'none';
-    }
-
-    agreeBtn.addEventListener('click', function() {
-      localStorage.setItem('disclaimerAgreed', 'true');
-      overlay.style.display = 'none';
-    });
-  });
-</script>
-</body>
-</html>
+        <a href="pr
 
 
+
+
+          
