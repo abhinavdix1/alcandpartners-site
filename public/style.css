@@ -1,4 +1,4 @@
-/* style.css */
+/* public/style.css */
 
 /* Reset & Base */
 * {
@@ -8,14 +8,17 @@
 }
 body {
   font-family: 'Inter', sans-serif;
-  background: #fdfdfd;
+  background: #fff;
   color: #222;
   line-height: 1.6;
+}
+.hidden {
+  display: none;
 }
 
 /* Typography */
 h1, h2, h3 {
-  color: #6e1423; /* Maroon */
+  color: #800000; /* Maroon */
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -28,7 +31,7 @@ a {
   transition: color 0.3s;
 }
 a:hover {
-  color: #006b6b;
+  color: #006666;
 }
 
 /* Containers */
@@ -40,7 +43,7 @@ a:hover {
 
 /* Navbar */
 .navbar {
-  background: #6e1423;
+  background: #800000;
   color: #fff;
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -67,10 +70,9 @@ a:hover {
 
 /* Hero */
 .hero {
-  background: linear-gradient(to right, #6e1423, #008080);
-  color: #fff;
+  background: #f9f9f9;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 4rem 1rem;
 }
 .hero h1 {
   font-size: 2rem;
@@ -89,7 +91,7 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 .btn-primary {
   background: #008080;
@@ -97,19 +99,19 @@ a:hover {
   border: none;
 }
 .btn-primary:hover {
-  background: #006b6b;
+  background: #006666;
 }
 .btn-outline {
   background: transparent;
-  border: 2px solid #6e1423;
-  color: #6e1423;
+  border: 2px solid #800000;
+  color: #800000;
 }
 .btn-outline:hover {
-  background: #6e1423;
+  background: #800000;
   color: #fff;
 }
 
-/* Previews & CTA */
+/* Preview Sections */
 .about-preview,
 .services-preview,
 .contact-cta {
@@ -154,7 +156,7 @@ a:hover {
 
 /* Footer */
 footer {
-  background: #6e1423;
+  background: #800000;
   color: #fff;
   padding: 2rem 1rem;
   text-align: center;
@@ -173,8 +175,9 @@ footer {
 /* Disclaimer Overlay */
 #disclaimer-overlay {
   position: fixed;
-  inset: 0;
-  background: rgba(30,30,30,0.85);
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,7 +194,7 @@ footer {
 }
 .disclaimer-modal h2 {
   margin-bottom: 1rem;
-  color: #6e1423;
+  color: #800000;
 }
 .disclaimer-modal p {
   margin-bottom: 1.5rem;
@@ -212,8 +215,7 @@ footer {
   .hero h1 {
     font-size: 1.8rem;
   }
-  .card-grid,
-  .team {
+  .card-grid {
     grid-template-columns: 1fr;
   }
 }
