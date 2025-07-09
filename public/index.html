@@ -1,3 +1,4 @@
+<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ALC & PARTNERS</title>
   <link rel="stylesheet" href="style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <!-- Disclaimer Overlay (only here!) -->
+  <!-- Disclaimer Overlay -->
   <div id="disclaimer-overlay">
     <div class="disclaimer-modal">
       <h2>Disclaimer</h2>
@@ -24,8 +22,8 @@
     </div>
   </div>
 
-  <!-- Wrap all your site content in this -->
-  <div id="site-content">
+  <!-- Site Content -->
+  <div id="site-content" class="hidden">
     <header class="navbar">
       <div class="container header-flex">
         <div class="logo">ALC & PARTNERS</div>
@@ -38,45 +36,40 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-        <h1>Precise, Adept and Expert Legal Solutions — Delivered Securely and Remotely</h1>
-        <p>Empowering you every step of the way with on‑demand, unbundled legal services via a fully secure online workflow.</p>
+        <h1>Precise, Adept & Expert Legal Solutions — Delivered Securely & Remotely</h1>
+        <p>Empowering you with on‑demand, unbundled legal services via a fully secure online workflow.</p>
         <a href="services.html" class="btn btn-primary">Explore Services</a>
       </div>
     </section>
 
-    <!-- About Preview -->
     <section class="about-preview container">
       <h2>About Us</h2>
-      <p>40+ years of combined in‑house and courtroom experience — lightweight and targeted support with no bulky retainers or hidden fees.</p>
+      <p>40+ years of combined in‑house and courtroom experience—lightweight, targeted support with no bulky retainers or hidden fees.</p>
       <a href="about.html" class="btn btn-outline">Learn More</a>
     </section>
 
-    <!-- Services Preview -->
     <section class="services-preview container">
       <h2>Core Services</h2>
       <div class="card-grid">
-        <div class="card"><h3>Pre‑Litigation</h3><p>Risk mapping, notices, demand letters, mediation, negotiations &amp; strategy.</p></div>
-        <div class="card"><h3>Drafting</h3><p>Contracts, agreements, pleadings, petitions, complaints — court‑ready documents.</p></div>
-        <div class="card"><h3>Research</h3><p>Deep‑dive memos on statutes, case law &amp; regulations for professionals and students.</p></div>
-        <div class="card"><h3>Advisory</h3><p>Tailored legal opinions, rights &amp; obligations analysis, next‑step recommendations.</p></div>
+        <div class="card"><h3>Pre‑Litigation</h3><p>Risk mapping, notices, responses, demand letters, mediation, negotiations & strategy.</p></div>
+        <div class="card"><h3>Drafting</h3><p>Contracts, agreements, pleadings, plaint, petitions, complaints—court‑ready documents.</p></div>
+        <div class="card"><h3>Research</h3><p>Deep‑dive memos on statutes, new govt. directions, case laws, rules & regulations, dissertation research - for professionals & students.</p></div>
+        <div class="card"><h3>Advisory</h3><p>Tailored opinions, rights & obligations analysis, court procedurals, next‑step recommendations.</p></div>
       </div>
       <a href="services.html" class="btn btn-primary">View All Services</a>
     </section>
 
-    <!-- Contact CTA -->
     <section class="contact-cta container">
       <h2>Ready to Get Started?</h2>
       <p>Submit your request and our team will respond with a custom plan and clear pricing.</p>
       <a href="contact.html" class="btn btn-primary">Contact Us</a>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="container footer-flex">
-        <p>&copy; 2025 ALC & PARTNERS</p>
+        <p>&copy; 2025 ALC &amp; PARTNERS</p>
         <nav>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Use</a>
@@ -85,27 +78,22 @@
     </footer>
   </div>
 
-  <!-- Disclaimer Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const overlay  = document.getElementById('disclaimer-overlay');
-      const content  = document.getElementById('site-content');
-      const agreeBtn = document.getElementById('agree-button');
+      const overlay = document.getElementById('disclaimer-overlay');
+      const content = document.getElementById('site-content');
+      const agree   = document.getElementById('agree-button');
 
-      if (localStorage.getItem('disclaimerAccepted') === 'true') {
-        overlay.style.display = 'none';
-        content.style.display = 'block';
-      } else {
-        overlay.style.display = 'flex';
-        content.style.display = 'none';
-      }
+      // Always show overlay initially
+      overlay.style.display = 'flex';
+      content.classList.add('hidden');
 
-      agreeBtn.addEventListener('click', () => {
-        localStorage.setItem('disclaimerAccepted', 'true');
+      agree.addEventListener('click', () => {
         overlay.style.display = 'none';
-        content.style.display = 'block';
+        content.classList.remove('hidden');
       });
     });
   </script>
 </body>
 </html>
+
