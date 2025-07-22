@@ -1,18 +1,22 @@
+<!-- public/contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact – ALC & PARTNERS</title>
+  <title>Contact – ALC &amp; PARTNERS</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
 
   <!-- Header -->
   <header class="navbar">
     <div class="container header-flex">
-      <div class="logo">ALC & PARTNERS</div>
+      <div class="logo">ALC &amp; PARTNERS</div>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -33,20 +37,57 @@
         method="POST"
         style="max-width: 600px; margin: auto;"
       >
-        <label for="email">Your Email:</label>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="Your Full Name"
+          style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;"
+        />
+
+        <label for="contact">Contact No.:</label>
+        <input
+          type="tel"
+          name="contact"
+          id="contact"
+          required
+          placeholder="+91 98765 43210"
+          style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;"
+        />
+
+        <label for="email">Email:</label>
         <input
           type="email"
           name="email"
           id="email"
           required
+          placeholder="you@example.com"
           style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;"
         />
 
-        <label for="message">Your Message:</label>
+        <label for="service">Select Service:</label>
+        <select
+          name="service"
+          id="service"
+          required
+          style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;"
+        >
+          <option value="">-- Please choose --</option>
+          <option value="Pre Litigation">Pre Litigation</option>
+          <option value="Drafting">Drafting</option>
+          <option value="Legal Advice/Opinion">Legal Advice/Opinion</option>
+          <option value="Legal Research">Legal Research</option>
+          <option value="Dispute Resolution">Dispute Resolution</option>
+        </select>
+
+        <label for="message">Your Query:</label>
         <textarea
           name="message"
           id="message"
           required
+          placeholder="Describe your query or issue..."
           style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px; min-height: 120px;"
         ></textarea>
 
@@ -55,7 +96,7 @@
     </section>
 
     <section class="contact-details" style="text-align: center; margin-top: 2rem;">
-      <p>Email: <a href="mailto:alcpartners@zohomail.in">alcpartners@zohomail.in</a></p>
+      <p>Email: <a href="mailto:alcandpartners@zohomail.in">alcandpartners@zohomail.in</a></p>
       <p>Phone/WhatsApp: +91 7042122637</p>
       <p>Operating across India</p>
     </section>
@@ -64,7 +105,7 @@
   <!-- Footer -->
   <footer>
     <div class="container footer-flex">
-      <p>&copy; 2025 ALC & PARTNERS</p>
+      <p>&copy; 2025 ALC &amp; PARTNERS</p>
     </div>
   </footer>
 
