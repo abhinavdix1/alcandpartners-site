@@ -1,105 +1,61 @@
+<!-- public/contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - ALC & Partners</title>
-  <!-- Link to existing stylesheet -->
-  <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – ALC &amp; PARTNERS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
-  <div class="contact-container">
-    <?php
-    // Mail handling logic
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $to      = 'contact@alcandpartners.com';
-        $subject = 'New Contact Form Submission';
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container header-flex">
+      <div class="logo">ALC &amp; PARTNERS</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-        // Sanitize inputs
-        $name    = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-        $phone   = filter_input(INPUT_POST, 'contact', FILTER_SANITIZE_STRING);
-        $email   = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-        $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+  <!-- Contact Section -->
+  <main class="container">
+    <section class="contact-cta">
+      <h2>Contact Us</h2>
+      <p>Please fill out the form below, and we will get back to you within 24‑48 hours with a custom plan and clear pricing.</p>
+      <form action="#" method="post" style="max-width:600px; margin:auto;">
+        <label for="name">Your Name *</label>
+        <input id="name" name="name" type="text" required style="width:100%; padding:0.75rem; margin-bottom:1rem; border:1px solid #ccc; border-radius:6px;">
 
-        // Handle file upload
-        $fileAttached = false;
-        $headers  = "From: " . $email . "\r\n";
-        $boundary = md5(uniqid(time()));
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: multipart/mixed; boundary=\"" . $boundary . "\"\r\n";
+        <label for="email">Your Email *</label>
+        <input id="email" name="email" type="email" required style="width:100%; padding:0.75rem; margin-bottom:1rem; border:1px solid #ccc; border-radius:6px;">
 
-        // Message body
-        $body = "--" . $boundary . "\r\n";
-        $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
-        $body .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
-        $body .= "Name: $name\n";
-        $body .= "Contact: $phone\n";
-        $body .= "Email: $email\n\n";
-        $body .= "Message:\n$message\n";
+        <label for="message">Your Message *</label>
+        <textarea id="message" name="message" required style="width:100%; padding:0.75rem; margin-bottom:1rem; border:1px solid #ccc; border-radius:6px; min-height:120px;"></textarea>
 
-        if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-            $fileTmp  = $_FILES['file']['tmp_name'];
-            $fileName = basename($_FILES['file']['name']);
-            $fileSize = $_FILES['file']['size'];
-            $fileType = mime_content_type($fileTmp);
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </section>
 
-            $handle = fopen($fileTmp, 'rb');
-            $fileData = fread($handle, $fileSize);
-            fclose($handle);
-            $fileData = chunk_split(base64_encode($fileData));
+    <section class="contact-details" style="text-align:center; margin-top:2rem;">
+      <p>Email: <a href="mailto:contact@alcandpartners.com">contact@alcandpartners.com</a></p>
+      <p>Phone/WhatsApp: +91 7042122637</p>
+      <p>Operating across India</p>
+    </section>
+  </main>
 
-            $body .= "--" . $boundary . "\r\n";
-            $body .= "Content-Type: " . $fileType . "; name=\"" . $fileName . "\"\r\n";
-            $body .= "Content-Transfer-Encoding: base64\r\n";
-            $body .= "Content-Disposition: attachment; filename=\"" . $fileName . "\"\r\n\r\n";
-            $body .= $fileData . "\r\n";
-
-            $fileAttached = true;
-        }
-
-        // End boundary
-        $body .= "--" . $boundary . "--";
-
-        // Send mail
-        if (mail($to, $subject, $body, $headers)) {
-            echo '<p class="success">Thank you, your message has been sent.</p>';
-        } else {
-            echo '<p class="error">Sorry, an error occurred. Please try again later.</p>';
-        }
-    }
-    ?>
-
-    <h1>Contact Us</h1>
-    <form action="" method="post" enctype="multipart/form-data" class="contact-form">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-
-      <div class="form-group">
-        <label for="contact">Contact Number</label>
-        <input type="tel" id="contact" name="contact" required>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="file">Attach a File (optional)</label>
-        <input type="file" id="file" name="file">
-      </div>
-
-      <button type="submit" class="btn-submit">Send Message</button>
-    </form>
-  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-flex">
+      <p>&copy; 2025 ALC &amp; PARTNERS</p>
+    </div>
+  </footer>
 </body>
 </html>
-
