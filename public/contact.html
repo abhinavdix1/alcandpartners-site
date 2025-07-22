@@ -1,28 +1,105 @@
-<form
-  class="contact-form"
-  action="https://formsubmit.co/contact@alcandpartners.com"
-  method="POST">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - ALC & Partners</title>
+  <!-- Link to existing stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="contact-container">
+    <?php
+    // Mail handling logic
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $to      = 'contact@alcandpartners.com';
+        $subject = 'New Contact Form Submission';
 
-  <!-- 1. Prevent spam (simple honeypot) -->
-  <input type="hidden" name="_captcha" value="true">
+        // Sanitize inputs
+        $name    = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+        $phone   = filter_input(INPUT_POST, 'contact', FILTER_SANITIZE_STRING);
+        $email   = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+        $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
 
-  <!-- 2. Customize email subject -->
-  <input type="hidden" name="_subject" value="New message from alcandpartners.com">
+        // Handle file upload
+        $fileAttached = false;
+        $headers  = "From: " . $email . "\r\n";
+        $boundary = md5(uniqid(time()));
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: multipart/mixed; boundary=\"" . $boundary . "\"\r\n";
 
-  <!-- 3. (Optional) Redirect user after submit -->
-  <input type="hidden" name="_next" value="https://alcandpartners.com/thank-you.html">
+        // Message body
+        $body = "--" . $boundary . "\r\n";
+        $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
+        $body .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
+        $body .= "Name: $name\n";
+        $body .= "Contact: $phone\n";
+        $body .= "Email: $email\n\n";
+        $body .= "Message:\n$message\n";
 
-  <label for="name">Your Name *</label>
-  <input type="text" id="name" name="name" required />
+        if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+            $fileTmp  = $_FILES['file']['tmp_name'];
+            $fileName = basename($_FILES['file']['name']);
+            $fileSize = $_FILES['file']['size'];
+            $fileType = mime_content_type($fileTmp);
 
-  <label for="email">Your Email *</label>
-  <input type="email" id="email" name="email" required />
+            $handle = fopen($fileTmp, 'rb');
+            $fileData = fread($handle, $fileSize);
+            fclose($handle);
+            $fileData = chunk_split(base64_encode($fileData));
 
-  <label for="phone">Phone Number</label>
-  <input type="tel" id="phone" name="phone" />
+            $body .= "--" . $boundary . "\r\n";
+            $body .= "Content-Type: " . $fileType . "; name=\"" . $fileName . "\"\r\n";
+            $body .= "Content-Transfer-Encoding: base64\r\n";
+            $body .= "Content-Disposition: attachment; filename=\"" . $fileName . "\"\r\n\r\n";
+            $body .= $fileData . "\r\n";
 
-  <label for="message">Your Message *</label>
-  <textarea id="message" name="message" required></textarea>
+            $fileAttached = true;
+        }
 
-  <button type="submit">Submit</button>
-</form>
+        // End boundary
+        $body .= "--" . $boundary . "--";
+
+        // Send mail
+        if (mail($to, $subject, $body, $headers)) {
+            echo '<p class="success">Thank you, your message has been sent.</p>';
+        } else {
+            echo '<p class="error">Sorry, an error occurred. Please try again later.</p>';
+        }
+    }
+    ?>
+
+    <h1>Contact Us</h1>
+    <form action="" method="post" enctype="multipart/form-data" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contact Number</label>
+        <input type="tel" id="contact" name="contact" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="file">Attach a File (optional)</label>
+        <input type="file" id="file" name="file">
+      </div>
+
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+  </div>
+</body>
+</html>
+
